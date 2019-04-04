@@ -5,9 +5,9 @@
 //this will be changed to #define or #undef in config.hpp
 //in accordancw with the flags set in cmakelists.txt
 //default - 0N
-#cmakedefine01 POONAM_STRING_ID_DATABASE
+#define POONAM_STRING_ID_DATABASE 1
 
 //same for thread safety
-#cmakedefine01 POONAM_STRING_ID_MULTITHREADED
+#define POONAM_STRING_ID_MULTITHREADED 1
 
 #endif // POONAM_STRING_ID_CONFIG_FILE_INCLUDED

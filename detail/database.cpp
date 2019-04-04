@@ -20,7 +20,7 @@ bool sid::detail::thread_safe_database::insert(detail::hash_type hash, const cha
 	return database_.insert(hash, str);
 }
 
-const char* sid::detail::single_threaded_database::lookup(detail::hash_type hash) const {
+const char* sid::detail::thread_safe_database::lookup(detail::hash_type hash) const {
 	std::lock_guard<std::mutex> lock(mutex_);
 	return strings_.at(hash).c_str();
 }

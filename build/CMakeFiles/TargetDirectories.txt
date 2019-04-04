@@ -1,0 +1,4 @@
+/home/poonam/string_id/build/CMakeFiles/rebuild_cache.dir
+/home/poonam/string_id/build/CMakeFiles/edit_cache.dir
+/home/poonam/string_id/build/CMakeFiles/poonam_string_id.dir
+/home/poonam/string_id/build/CMakeFiles/poonam_string_id_example.dir

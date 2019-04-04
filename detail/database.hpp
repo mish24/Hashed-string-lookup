@@ -20,12 +20,12 @@ namespace Poonam {
 				const char* lookup(hash_type) const {
 					return "string_id lookup disabled";
 				}
-			}
+			};
 
 			class single_threaded_database {
 			public:
 				bool insert(hash_type hash, const char* str);
-				const char* lookup(hash_type) const;
+				const char* lookup(hash_type hash) const;
 
 			private:
 				std::unordered_map<hash_type, std::string> strings_;
@@ -40,6 +40,7 @@ namespace Poonam {
 			private:
 				single_threaded_database database_; //object
 				mutable std::mutex mutex_;
+				std::unordered_map<hash_type, std::string> strings_;
 			};
 		}
 	}

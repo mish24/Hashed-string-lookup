@@ -7,7 +7,7 @@ handles that. */
 
 #include <stdexcept>
 
-#include "details/hash.hpp"
+#include "detail/hash.hpp"
 
 namespace Poonam {
 	namespace string_id {
@@ -34,13 +34,13 @@ namespace Poonam {
 				return b_.c_str();
 			}
 
-			detail::hash_type.hash_code() const noexcept
+			detail::hash_type hash_code() const noexcept
 			{
 				return hash_;
 			}
 
 		private:
-			str::string a_, b_;
+			std::string a_, b_;
 			detail::hash_type hash_;
 		};
 		//namespace Poonam::string_id

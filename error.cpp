@@ -21,7 +21,7 @@ namespace {
 }
 
 sid::collision_error::collision_error(detail::hash_type hash, const char* a, const char* b)
-	: logic_error(format(hash,a,b), a_(a), b_(b), hash_(hash)
+	: logic_error(format(hash,a,b)), a_(a), b_(b), hash_(hash)
 	{}
 
 sid::collision_handler sid::set_collision_handler(collision_handler h) {
