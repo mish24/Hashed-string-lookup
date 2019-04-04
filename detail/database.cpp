@@ -22,5 +22,5 @@ bool sid::detail::thread_safe_database::insert(detail::hash_type hash, const cha
 
 const char* sid::detail::thread_safe_database::lookup(detail::hash_type hash) const {
 	std::lock_guard<std::mutex> lock(mutex_);
-	return strings_.at(hash).c_str();
+	return database_.lookup(hash);
 }
