@@ -18,7 +18,7 @@ else()
 
 	set(SRC detail/database.cpp
 			detail/database.hpp
-			detail/hash.hpp
+			hash.hpp
 			${CMAKE_CURRENT_BINARY_DIR}/config.hpp
 			database.hpp
 			error.cpp

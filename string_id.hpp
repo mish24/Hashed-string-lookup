@@ -3,7 +3,7 @@
 
 #include <functional>
 
-#include "detail/hash.hpp"
+#include "hash.hpp"
 #include "config.hpp"
 #include "database.hpp"
 #include "error.hpp"
@@ -18,11 +18,11 @@ namespace Poonam {
 			//creates a new id by hashing the string
 			//this is added onto the database and in case
 			//of collisions collision_handler will be called
-			string_id(const char* str, database& db);
+			string_id(const char* str, detail::basic_database& db);
 
 			//=====accessors====//
 			//returns the hashed value of the string
-			detail::hash_type hash_code() const noexcept {
+			hash_type hash_code() const noexcept {
 				return id_;
 			}
 
@@ -38,11 +38,11 @@ namespace Poonam {
 				return a.db_ == b.db_ && a.id_ == b.id_;
 			}
 
-			friend bool operator==(detail::hash_type a, string_id b) noexcept {
+			friend bool operator==(hash_type a, string_id b) noexcept {
 				return a == b.id_;
 			}
 
-			friend bool operator==(string_id a, detail::hash_type b) noexcept {
+			friend bool operator==(string_id a, hash_type b) noexcept {
 				return a.id_ == b;
 			}
 
@@ -50,20 +50,20 @@ namespace Poonam {
 				return !(a==b);
 			}
 
-			friend bool operator!=(detail::hash_type a, string_id b) noexcept {
+			friend bool operator!=(hash_type a, string_id b) noexcept {
 				return !(a==b);
 			}
 			/// @}
 		private:
-			detail::hash_type id_;
-			database *db_; //remember this is a ptr to the database. you can't really have a database attached. its a class
+			hash_type id_;
+			detail::basic_database *db_; //remember this is a ptr to the database. you can't really have a database attached. its a class
 		};
 
 		namespace literals {
 			//useful literal to hash the string
 			//doesnt check for collisions, hence just compare string_ids
 			//useful where we need compile-time constant
-			constexpr detail::hash_type operator""_id(const char* str, std::size_t) noexcept {
+			constexpr hash_type operator""_id(const char* str, std::size_t) noexcept {
 				return detail::sid_hash(str);
 			}
 		}

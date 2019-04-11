@@ -1,7 +1,7 @@
 #include "string_id.hpp"
 #include "detail/database.hpp"
 
-Poonam::string_id::string_id::string_id(const char* str, database &db) 
+Poonam::string_id::string_id::string_id(const char* str, detail::basic_database &db) 
 :id_(detail::sid_hash(str)), db_(&db) {
 	if(!db_->insert(id_,str)){
 		auto handler = get_collision_handler();

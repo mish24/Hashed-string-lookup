@@ -1,2 +1,0 @@
-/usr/bin/ar qc libpoonam_string_id.a  CMakeFiles/poonam_string_id.dir/detail/database.cpp.o CMakeFiles/poonam_string_id.dir/error.cpp.o CMakeFiles/poonam_string_id.dir/string_id.cpp.o
-/usr/bin/ranlib libpoonam_string_id.a

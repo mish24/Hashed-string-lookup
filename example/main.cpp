@@ -10,7 +10,7 @@ int main() try {
 	using namespace sid::literals;
 	//create a database object to store the strings
 	//must stay valid as long as string_id is using it
-	sid::database database;
+	sid::detail::dummy_database database;
 
 	//create an id
 	sid::string_id id("Test2403", database);

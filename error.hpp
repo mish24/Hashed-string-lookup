@@ -7,12 +7,12 @@ handles that. */
 
 #include <stdexcept>
 
-#include "detail/hash.hpp"
+#include "hash.hpp"
 
 namespace Poonam {
 	namespace string_id {
 		//a pointer to a void function which takes 3 args
-		using collision_handler = void(*)(detail::hash_type hash, const char* a, const char* b);
+		using collision_handler = void(*)(hash_type hash, const char* a, const char* b);
 
 		collision_handler set_collision_handler(collision_handler h);
 		collision_handler get_collision_handler();
@@ -21,7 +21,7 @@ namespace Poonam {
 		public:
 			//====constructor/destructor=====//
 			// creates a new exception, same params as collision_handler
-			collision_error(detail::hash_type hash, const char* a, const char* b);
+			collision_error(hash_type hash, const char* a, const char* b);
 			~collision_error() noexcept override = default;
 
 			//====accessors====//
@@ -34,14 +34,14 @@ namespace Poonam {
 				return b_.c_str();
 			}
 
-			detail::hash_type hash_code() const noexcept
+			hash_type hash_code() const noexcept
 			{
 				return hash_;
 			}
 
 		private:
 			std::string a_, b_;
-			detail::hash_type hash_;
+			hash_type hash_;
 		};
 		//namespace Poonam::string_id
 	}

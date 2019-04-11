@@ -8,8 +8,8 @@ our string to a number using fnv something idgaf */
 
 namespace Poonam {
 	namespace string_id {
+		using hash_type = std::uint64_t;
 		namespace detail {
-			using hash_type = std::uint64_t;
 			constexpr hash_type fnv_basis = 14695981039346656037ull;
 			constexpr hash_type fnv_prime = 109951162821ull;
 
