@@ -18,7 +18,7 @@ namespace Poonam {
 			//creates a new id by hashing the string
 			//this is added onto the database and in case
 			//of collisions collision_handler will be called
-			string_id(const char* str, detail::basic_database& db);
+			string_id(const char* str, basic_database& db);
 
 			//=====accessors====//
 			//returns the hashed value of the string
@@ -56,7 +56,7 @@ namespace Poonam {
 			/// @}
 		private:
 			hash_type id_;
-			detail::basic_database *db_; //remember this is a ptr to the database. you can't really have a database attached. its a class
+			basic_database *db_; //remember this is a ptr to the database. you can't really have a database attached. its a class
 		};
 
 		namespace literals {

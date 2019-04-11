@@ -10,11 +10,11 @@ int main() try {
 	using namespace sid::literals;
 	//create a database object to store the strings
 	//must stay valid as long as string_id is using it
-	sid::detail::dummy_database database;
+	sid::default_database database;
 
 	//create an id
 	sid::string_id id("Test2403", database);
-	std::cout << "Hash code " << id.hash_code() << "belongs to string \"" << id.string() << std::endl;
+	std::cout << "Hash code " << id.hash_code() << " belongs to string \"" << id.string() << std::endl;
 	sid::string_id a("Hello", database), b("World",database);
 	std::cout << std::boolalpha << (a==b) << std::endl;
 

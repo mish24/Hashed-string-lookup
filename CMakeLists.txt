@@ -1,5 +1,5 @@
-option(POONAM_STRING_ID_DATABASE "enable or disable database" ON)
-option(POONAM_STRING_ID_MULTITHREADED "enalbe or disable a thread safe database" ON)
+option(POONAM_STRING_ID_DATABASE "enable or disable database" OFF)
+option(POONAM_STRING_ID_MULTITHREADED "enalbe or disable a thread safe database" OFF)
 
 if(BIICODE)
 	include(${CMAKE_HOME_DIRECTORY}/biicode.cmake)
@@ -16,8 +16,7 @@ else()
 	configure_file("${CMAKE_CURRENT_SOURCE_DIR}/config.hpp.in"
 						"${CMAKE_CURRENT_BINARY_DIR}/config.hpp")
 
-	set(SRC detail/database.cpp
-			detail/database.hpp
+	set(SRC database.cpp
 			hash.hpp
 			${CMAKE_CURRENT_BINARY_DIR}/config.hpp
 			database.hpp
